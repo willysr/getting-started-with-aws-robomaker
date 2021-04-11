@@ -1,0 +1,477 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AWS RoboMaker Demo - Course 0: Fundamentals of Robotics</title>
+<meta name="description" content="With the AWS robot development configured, let’s ensure that we understand the main tools and see a sample example which will show the simulation running. In this unit, we will learn what the structure of the code should be and how to run the simulation. We will learn in the next course, as we deepen into ROS, how the code can be modified.">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Course 0: Fundamentals of Robotics">
+<meta property="og:title" content="AWS RoboMaker Demo">
+<meta property="og:url" content="/modules/3/robomaker-demo.html">
+
+
+  <meta property="og:description" content="With the AWS robot development configured, let’s ensure that we understand the main tools and see a sample example which will show the simulation running. In this unit, we will learn what the structure of the code should be and how to run the simulation. We will learn in the next course, as we deepen into ROS, how the code can be modified.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-11T23:43:45+07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/modules/3/robomaker-demo.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "AWS",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Course 0: Fundamentals of Robotics Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Course 0: Fundamentals of Robotics
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Syllabus</a>
+            </li><li class="masthead__menu-item">
+              <a href="/modules/index.html">Modules</a>
+            </li><li class="masthead__menu-item">
+              <a href="/additional-resources.html">Additional resources</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Course Introduction</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/0/motivation.html">Motivation</a></li>
+          
+            <li><a href="/modules/0/objectives.html">Course objectives</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 1 - Intro to AWS RoboMaker</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/1/robomaker.html">AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/1/architecture.html">AWS RoboMaker Architecture</a></li>
+          
+            <li><a href="/modules/1/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 2 - Necessary AWS Services</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/2/aws.html">AWS Core Services</a></li>
+          
+            <li><a href="/modules/2/services.html">AWS Services at Run-time</a></li>
+          
+            <li><a href="/modules/2/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 3 - AWS RoboMaker Development Environment</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/3/robomaker.html">Setting up AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/robomaker-demo.html" class="active">AWS RoboMaker demo</a></li>
+          
+            <li><a href="/modules/3/jetbot.html">Waveshare Jetbot on AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">End of the course and additional resources</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/additional-resources.html">Additional resources</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AWS RoboMaker Demo">
+    <meta itemprop="description" content="With the AWS robot development configured, let’s ensure that we understand the main tools and see a sample example which will show the simulation running. In this unit, we will learn what the structure of the code should be and how to run the simulation. We will learn in the next course, as we deepen into ROS, how the code can be modified.">
+    <meta itemprop="datePublished" content="2021-04-11T23:43:45+07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">AWS RoboMaker Demo
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>With the AWS robot development configured, let’s ensure that we understand the main tools and see a sample example which will show the simulation running. In this unit, we will learn what the structure of the code should be and how to run the simulation. We will learn in the next course, as we deepen into ROS, how the code can be modified.</p>
+
+<h2 id="simple-application-ready-to-go">Simple application “ready-to-go”</h2>
+
+<p>We will start from a sample application available in RoboMaker, allowing us to inspect the different elements. To do that, just click on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Resources" -&gt; "Download Samples" -&gt; "Hello World".
+</code></pre></div></div>
+
+<p>as shown in the following screenshot:</p>
+
+<p><img src="/img/download-samples.png" alt="Download samples" /></p>
+
+<p>This will initiate the download of the necessary dependencies.</p>
+
+<h2 id="directory-structure-for-workspaces">Directory structure for workspaces</h2>
+
+<p>It will take a few minutes for the download. Once downloaded, we will see that there is a new folder <code class="language-plaintext highlighter-rouge">HelloWorld</code>. This folder contains the ROS workspaces. In particular, the one we are interested in is <code class="language-plaintext highlighter-rouge">simulation_ws</code> – the other one is for deployment on the real robot, which we will see in one of the final courses. As shown in the following figure, the structure is identical to the structure of a <code class="language-plaintext highlighter-rouge">colcon</code> workspace in ROS (and very similar to the <code class="language-plaintext highlighter-rouge">catkin</code> workspace). In particular, the ROS package that contains code, which will make the robot rotate in place, is called <code class="language-plaintext highlighter-rouge">hello_world_simulation</code>.</p>
+
+<p><img src="/img/structure.png" alt="Structure" /></p>
+
+<h2 id="terminal-available">Terminal available</h2>
+
+<p>The terminal made available from Cloud9 allows to run all commands that can be run in Ubuntu, including <code class="language-plaintext highlighter-rouge">git</code> in case a package from a repository needs to be downloaded. Here some example of commands to navigate within the directory structure.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ubuntu:~ $ ls
+environment  gocode  node_modules  package-lock.json
+ubuntu:~ $ cd environment/HelloWorld/simulation_ws/
+ubuntu:~/environment/HelloWorld/simulation_ws $ ls
+build  bundle  install  log  src
+ubuntu:~/environment/HelloWorld/simulation_ws $ cd src/
+</code></pre></div></div>
+
+<h2 id="build-and-bundle">Build and bundle</h2>
+
+<p>Once downloaded, start the build and bundle which takes some time. In particular, click on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Run-&gt;Workflow-&gt;"Build and Bundle All"-&gt;Hello World - Build and Bundle All
+</code></pre></div></div>
+
+<p>which will compile the code. Once the Build is done, click on Run-&gt;Bundle-&gt;HelloWorld Simulation, which will create a portable environment. Such a portable environment can be moved to a different Linux system and executed as if the contents of the bundle were installed locally.</p>
+
+<h2 id="configuring-workspaces-and-simulation-options">Configuring workspaces and simulation options</h2>
+
+<p>In the meanwhile, there are a few settings that are important to know so that the robotic application can be built and the simulation run. Clicking on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Run"-&gt;"Add or Edit Configurations..."
+</code></pre></div></div>
+
+<p>the following pop up window will open</p>
+
+<p><img src="/img/configuration.png" alt="Configuration" /></p>
+
+<ul>
+  <li>
+    <p>In <code class="language-plaintext highlighter-rouge">COLCON BUILD</code> and <code class="language-plaintext highlighter-rouge">COLCON BUNDLE</code> the workspaces can be added. In the example, there are two: <code class="language-plaintext highlighter-rouge">HelloWorld Robot</code> and <code class="language-plaintext highlighter-rouge">HelloWorld Simulation</code>, referring to <code class="language-plaintext highlighter-rouge">robot_ws</code> and <code class="language-plaintext highlighter-rouge">simulation_ws</code>, respectively. Custom workspaces can be added as well.</p>
+  </li>
+  <li>
+    <p><code class="language-plaintext highlighter-rouge">WORKFLOW</code> specifies all actions that can run with a single click, e.g., build, bundle, and run simulation.</p>
+  </li>
+  <li>
+    <p>The one that requires some attention is setting up the simulation job in <code class="language-plaintext highlighter-rouge">SIMULATION</code>.</p>
+  </li>
+</ul>
+
+<p>The simulation requires connecting to resources created before. In particular, the resources that need to be set are: IAM role, the  S3 destination, security groups and subnets. In the simulation there is also the file that can be used to run the whole ROS simulation. The following video identifies the main steps to execute.</p>
+
+<figure>
+  <video controls="">
+    <source src="/img/robomaker-sim-conf.mp4" type="video/mp4" />
+    <track label="English" kind="subtitles" srclang="en" src="/img/robomaker-sim-conf.vtt" default="" />
+    Your browser does not support the video tag.
+  </video>
+</figure>
+
+<p>Note that in the video, it is mentioned to choose “zones 1b and 1c” as subnets, referring to the specific zones that are available for an AWS Educate account. Some other zones might be available depending on the subscription.</p>
+
+<h2 id="running-the-simulation">Running the simulation</h2>
+<p>Once the Bundle is done, then clicking on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Run-&gt;Launch Simulation-&gt;HelloWorld
+</code></pre></div></div>
+
+<p>will start the simulation. It will take a few minutes to upload the bundle to an S3 bucket and run an EC2 instance for the AWS RoboMaker simulation to start. You will see that the status “Preparing” at the top menu bar, and then it will run.</p>
+
+<p>When “Preparing” becomes “Running”, click on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Simulation (Running)"-&gt;"View Simulation Job Details"
+</code></pre></div></div>
+
+<p>This will open a new  window from which the application tools typically used to inspect the behavior of the code can be launched, by clicking on <code class="language-plaintext highlighter-rouge">"Connect"</code> of each respective tool. For example <code class="language-plaintext highlighter-rouge">GZClient</code> for opening the Gazebo graphical user interface.</p>
+
+<p>The simulation can be seen, as shown in the following figure.</p>
+
+<p><img src="/img/gazebo.png" alt="Gazebo" /></p>
+
+<h2 id="stopping-the-simulation">Stopping the simulation</h2>
+<p>While there is a max time configurable from the configuration of the simulation, it is important to stop the simulation when done to minimize the incurred cost. This can be done clicking from the top right on</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>"Actions"-&gt;"Cancel"
+</code></pre></div></div>
+
+<p>A message will appear asking for confirmation to “Cancel”.</p>
+
+<p>Now that we got started with the environment, let’s modify in the <a href="/modules/3/jetbot.html">next unit</a> the simulation to include the Waveshare Jetbot, which is part of this course. This will allow us to be ready to learn how to develop robotics applications in the following course.</p>
+
+<div style="font-size:8px;">
+  <h3>References</h3>
+  
+<ol class="bibliography"></ol>
+
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-11T23:43:45+07:00">April 11, 2021</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/modules/3/robomaker.html" class="pagination--pager" title="Setting up AWS RoboMaker
+">Previous</a>
+    
+    
+      <a href="/modules/3/jetbot.html" class="pagination--pager" title="Waveshare Jetbot on AWS RoboMaker
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+            <hr>
+    <div class="wrapper">
+      <footer>
+        &copy; Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. // SPDX-License-Identifier: CC-BY-SA-4.0s
+      </footer>
+    </div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

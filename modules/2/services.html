@@ -1,0 +1,402 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>AWS services at run-time - Course 0: Fundamentals of Robotics</title>
+<meta name="description" content="After setting up the core services, there are a number of services that are useful to know to fully exploit the potential from RoboMaker and AWS.">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Course 0: Fundamentals of Robotics">
+<meta property="og:title" content="AWS services at run-time">
+<meta property="og:url" content="/modules/2/services.html">
+
+
+  <meta property="og:description" content="After setting up the core services, there are a number of services that are useful to know to fully exploit the potential from RoboMaker and AWS.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-11T23:43:45+07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/modules/2/services.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "AWS",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Course 0: Fundamentals of Robotics Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Course 0: Fundamentals of Robotics
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Syllabus</a>
+            </li><li class="masthead__menu-item">
+              <a href="/modules/index.html">Modules</a>
+            </li><li class="masthead__menu-item">
+              <a href="/additional-resources.html">Additional resources</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Course Introduction</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/0/motivation.html">Motivation</a></li>
+          
+            <li><a href="/modules/0/objectives.html">Course objectives</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 1 - Intro to AWS RoboMaker</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/1/robomaker.html">AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/1/architecture.html">AWS RoboMaker Architecture</a></li>
+          
+            <li><a href="/modules/1/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 2 - Necessary AWS Services</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/2/aws.html">AWS Core Services</a></li>
+          
+            <li><a href="/modules/2/services.html" class="active">AWS Services at Run-time</a></li>
+          
+            <li><a href="/modules/2/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 3 - AWS RoboMaker Development Environment</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/3/robomaker.html">Setting up AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/robomaker-demo.html">AWS RoboMaker demo</a></li>
+          
+            <li><a href="/modules/3/jetbot.html">Waveshare Jetbot on AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">End of the course and additional resources</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/additional-resources.html">Additional resources</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="AWS services at run-time">
+    <meta itemprop="description" content="After setting up the core services, there are a number of services that are useful to know to fully exploit the potential from RoboMaker and AWS.">
+    <meta itemprop="datePublished" content="2021-04-11T23:43:45+07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">AWS services at run-time
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>After setting up the core services, there are a number of services that are useful to know to fully exploit the potential from RoboMaker and AWS.</p>
+
+<h2 id="amazon-cloudwatch">Amazon CloudWatch</h2>
+<p>Amazon CloudWatch is a service that allows for complete observability of the system, e.g., by providing tools for monitoring application and for resource optimization <a class="citation" href="#aws2020cloudwatch">(AWS, 2020)</a>. This is particularly useful for example to observe whether a robotic application will use too much resources making it not deployable on an embedded system.</p>
+
+<h2 id="aws-iot-greengrass-and-aws-lambda">AWS IoT Greengrass and AWS Lambda</h2>
+<p>AWS IoT Greengrass allows local devices, such as robots, to work locally with the embedded system, at the same time connect to the cloud for management, analytics, and storage <a class="citation" href="#aws2020greengrass">(AWS, 2020)</a>. The local device needs greengrass software to be installed to enable communication with the cloud.</p>
+
+<p>Another service, AWS Lambda are functions that can respond to data produced by the devices. In addition, AWS Lambda can ensure a safe communication with other devices even when not connected to the Internet <a class="citation" href="#aws2020lambda">(AWS, 2020)</a>.</p>
+
+<p>These two services are useful for deployment of robotic applications on the physical robots.</p>
+
+<h2 id="other-services-for-data-processing">Other services for data processing</h2>
+
+<p>The previous two services are useful at run-time, for any type of robotics applications, especially thinking to connect to real robots.</p>
+
+<p>There are a number of other services that can boost the intelligence of the robots and that are integrated within AWS RoboMaker:</p>
+<ul>
+  <li>Amazon Polly for text-to-speech capabilities.</li>
+  <li>Amazon Lex for dialogue capabilities <a class="citation" href="#aws2020polly">(AWS, 2020)</a>.</li>
+  <li>AWS Kinesis for  processing data – e.g., audio, video, telemetry data – in real-time that can be processed by other services <a class="citation" href="#aws2020kinesis">(AWS, 2020)</a>.</li>
+  <li>AWS Rekognition for image and video analysis <a class="citation" href="#aws2020reko">(AWS, 2020)</a>, e.g., detecting objects and people for autonomous robots.</li>
+</ul>
+
+<p>Now we should have a bigger picture about AWS RoboMaker and how that interfaces with the whole ecosystem. Before moving forward on setting up an AWS RoboMaker environment, <a href="/modules/2/assessment.html">let’s assess our knowledge on AWS</a>.</p>
+
+<div style="font-size:8px;">
+  <h3>References</h3>
+  
+<ol class="bibliography"><li><span id="aws2020cloudwatch">AWS. (2020). <i>AWS Cloud Watch</i>. AWS. [https://aws.amazon.com/cloudwatch/getting-started/](https://aws.amazon.com/cloudwatch/getting-started/)</span></li>
+<li><span id="aws2020greengrass">AWS. (2020). <i>AWS IoT Greengrass</i>. AWS. [https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-gs.html](https://docs.aws.amazon.com/greengrass/latest/developerguide/gg-gs.html)</span></li>
+<li><span id="aws2020lambda">AWS. (2020). <i>AWS Lambda</i>. AWS. [https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html)</span></li>
+<li><span id="aws2020polly">AWS. (2020). <i>Amazon Polly</i>. AWS. [https://docs.aws.amazon.com/polly/latest/dg/getting-started.html](https://docs.aws.amazon.com/polly/latest/dg/getting-started.html)</span></li>
+<li><span id="aws2020kinesis">AWS. (2020). <i>AWS Kinesis</i>. AWS. [https://aws.amazon.com/kinesis/](https://aws.amazon.com/kinesis/)</span></li>
+<li><span id="aws2020reko">AWS. (2020). <i>AWS Rekognition</i>. AWS. [https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html](https://docs.aws.amazon.com/rekognition/latest/dg/what-is.html)</span></li></ol>
+
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-11T23:43:45+07:00">April 11, 2021</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/modules/2/aws.html" class="pagination--pager" title="AWS core services
+">Previous</a>
+    
+    
+      <a href="/modules/2/assessment.html" class="pagination--pager" title="Assessment for Module 2 - Necessary AWS Services
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+            <hr>
+    <div class="wrapper">
+      <footer>
+        &copy; Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. // SPDX-License-Identifier: CC-BY-SA-4.0s
+      </footer>
+    </div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>

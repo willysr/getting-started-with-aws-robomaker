@@ -1,0 +1,417 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.22.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Setting up AWS RoboMaker - Course 0: Fundamentals of Robotics</title>
+<meta name="description" content="Now that we know the different pieces that are needed for AWS RoboMaker, let’s learn the main steps on setting up an AWS RoboMaker environment. As you run through these steps, if you have a question you might find an answer in the RoboMaker Q&amp;A forum.">
+
+
+  <meta name="author" content="Your Name">
+  
+  <meta property="article:author" content="Your Name">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Course 0: Fundamentals of Robotics">
+<meta property="og:title" content="Setting up AWS RoboMaker">
+<meta property="og:url" content="/modules/3/robomaker.html">
+
+
+  <meta property="og:description" content="Now that we know the different pieces that are needed for AWS RoboMaker, let’s learn the main steps on setting up an AWS RoboMaker environment. As you run through these steps, if you have a question you might find an answer in the RoboMaker Q&amp;A forum.">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2021-04-11T23:43:45+07:00">
+
+
+
+
+
+  
+
+  
+
+
+<link rel="canonical" href="/modules/3/robomaker.html">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "AWS",
+      "url": "/"
+    
+  }
+</script>
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/feed.xml" type="application/atom+xml" rel="alternate" title="Course 0: Fundamentals of Robotics Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+
+<!--[if IE]>
+  <style>
+    /* old IE unsupported flexbox fixes */
+    .greedy-nav .site-title {
+      padding-right: 3em;
+    }
+    .greedy-nav button {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  </style>
+<![endif]-->
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <h2 class="screen-reader-text">Skip links</h2>
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/">
+          Course 0: Fundamentals of Robotics
+          
+        </a>
+        <ul class="visible-links"><li class="masthead__menu-item">
+              <a href="/index.html">Syllabus</a>
+            </li><li class="masthead__menu-item">
+              <a href="/modules/index.html">Modules</a>
+            </li><li class="masthead__menu-item">
+              <a href="/additional-resources.html">Additional resources</a>
+            </li></ul>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+  
+    
+      
+      
+      
+      
+    
+    
+      
+
+<nav class="nav__list">
+  
+  <input id="ac-toc" name="accordion-toc" type="checkbox" />
+  <label for="ac-toc">Toggle Menu</label>
+  <ul class="nav__items">
+    
+      <li>
+        
+          <span class="nav__sub-title">Course Introduction</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/0/motivation.html">Motivation</a></li>
+          
+            <li><a href="/modules/0/objectives.html">Course objectives</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 1 - Intro to AWS RoboMaker</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/1/robomaker.html">AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/1/architecture.html">AWS RoboMaker Architecture</a></li>
+          
+            <li><a href="/modules/1/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 2 - Necessary AWS Services</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/2/aws.html">AWS Core Services</a></li>
+          
+            <li><a href="/modules/2/services.html">AWS Services at Run-time</a></li>
+          
+            <li><a href="/modules/2/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">Module 3 - AWS RoboMaker Development Environment</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/modules/3/robomaker.html" class="active">Setting up AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/robomaker-demo.html">AWS RoboMaker demo</a></li>
+          
+            <li><a href="/modules/3/jetbot.html">Waveshare Jetbot on AWS RoboMaker</a></li>
+          
+            <li><a href="/modules/3/assessment.html">Assessment</a></li>
+          
+        </ul>
+        
+      </li>
+    
+      <li>
+        
+          <span class="nav__sub-title">End of the course and additional resources</span>
+        
+
+        
+        <ul>
+          
+            <li><a href="/additional-resources.html">Additional resources</a></li>
+          
+        </ul>
+        
+      </li>
+    
+  </ul>
+</nav>
+
+    
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Setting up AWS RoboMaker">
+    <meta itemprop="description" content="Now that we know the different pieces that are needed for AWS RoboMaker, let’s learn the main steps on setting up an AWS RoboMaker environment. As you run through these steps, if you have a question you might find an answer in the RoboMaker Q&amp;A forum.">
+    <meta itemprop="datePublished" content="2021-04-11T23:43:45+07:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Setting up AWS RoboMaker
+</h1>
+          
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <p>Now that we know the different pieces that are needed for AWS RoboMaker, let’s learn the main steps on setting up an AWS RoboMaker environment. As you run through these steps, if you have a question you might find an answer in the <a href="https://forums.aws.amazon.com/forum.jspa?forumID=313">RoboMaker Q&amp;A forum</a>.</p>
+
+<p>The first step is to log in the AWS account – if not created, please create a new account. As we have seen in the previous module, this involves setting up the different core elements needed for AWS RoboMaker.</p>
+
+<h2 id="setting-up-s3-bucket">Setting up S3 Bucket</h2>
+<p>First, we will set the S3 Bucket, as shown in the following video.</p>
+
+<figure>
+  <video controls="">
+    <source src="/img/robomaker-s3.mp4" type="video/mp4" />
+    <track label="English" kind="subtitles" srclang="en" src="/img/robomaker-s3.vtt" default="" />
+    Your browser does not support the video tag.
+  </video>
+</figure>
+
+<p>This step will create the storage for containing the robot application.</p>
+
+<h2 id="setting-up-iam-permissions">Setting up IAM permissions</h2>
+<p>Second, we set the IAM permissions so that the relevant services can be accessed as part of the RoboMaker. The video shows the steps.</p>
+
+<figure>
+  <video controls="">
+    <source src="/img/robomaker-iam.mp4" type="video/mp4" />
+    <track label="English" kind="subtitles" srclang="en" src="/img/robomaker-iam.vtt" default="" />
+    Your browser does not support the video tag.
+  </video>
+</figure>
+
+<p>EC2 is to allow access to computing resources, while S3 is to allow access to the storage. CloudWatch is for monitoring the simulation when running.</p>
+
+<h2 id="setting-up-ec2-and-cloud9">Setting up EC2 and Cloud9</h2>
+
+<p>Finally, we can set up the RoboMaker development environment and create a new environment that will contain the code.</p>
+
+<figure>
+  <video controls="">
+    <source src="/img/robomaker-ide.mp4" type="video/mp4" />
+    <track label="English" kind="subtitles" srclang="en" src="/img/robomaker-ide.vtt" default="" />
+    Your browser does not support the video tag.
+  </video>
+</figure>
+
+<p>The environment from the example is set with ROS Melodic. The instance type refers to the hardware allocated for the development environment and simulation. <a href="https://aws.amazon.com/ec2/instance-types/">Here</a> the specific types, and RoboMaker supports all of them but T2, which does not have enough resources to run ROS.</p>
+
+<p>Now that we configured the environment, let’s move to the <a href="/modules/3/robomaker-demo.html">next unit</a> to start a simple example and get comfortable with the environment.</p>
+
+<div style="font-size:8px;">
+  <h3>References</h3>
+  
+<ol class="bibliography"></ol>
+
+</div>
+
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2021-04-11T23:43:45+07:00">April 11, 2021</time></p>
+
+
+      </footer>
+
+      
+
+      
+  <nav class="pagination">
+    
+      <a href="/modules/2/assessment.html" class="pagination--pager" title="Assessment for Module 2 - Necessary AWS Services
+">Previous</a>
+    
+    
+      <a href="/modules/3/robomaker-demo.html" class="pagination--pager" title="AWS RoboMaker Demo
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+</div>
+
+    </div>
+
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+            <hr>
+    <div class="wrapper">
+      <footer>
+        &copy; Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. // SPDX-License-Identifier: CC-BY-SA-4.0s
+      </footer>
+    </div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/assets/js/main.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
